@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{1A2FD6B2-FAA0-96B4-424D-28FE4CA5D1EA}") = "Test_SteamController", "Assembly-CSharp-firstpass.csproj", "{4055BCBB-4FA5-3740-9F5C-A3DAD3650A44}"
+EndProject
+Project("{1A2FD6B2-FAA0-96B4-424D-28FE4CA5D1EA}") = "Test_SteamController", "Assembly-CSharp.csproj", "{9E863F6A-6DF2-0FA3-0EF7-3748876138A1}"
+EndProject
+Project("{1A2FD6B2-FAA0-96B4-424D-28FE4CA5D1EA}") = "Test_SteamController", "Assembly-CSharp-Editor.csproj", "{BB2642E4-1452-95A9-1BE6-A698CCC7181D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4055BCBB-4FA5-3740-9F5C-A3DAD3650A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4055BCBB-4FA5-3740-9F5C-A3DAD3650A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4055BCBB-4FA5-3740-9F5C-A3DAD3650A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4055BCBB-4FA5-3740-9F5C-A3DAD3650A44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E863F6A-6DF2-0FA3-0EF7-3748876138A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E863F6A-6DF2-0FA3-0EF7-3748876138A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E863F6A-6DF2-0FA3-0EF7-3748876138A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E863F6A-6DF2-0FA3-0EF7-3748876138A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2642E4-1452-95A9-1BE6-A698CCC7181D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2642E4-1452-95A9-1BE6-A698CCC7181D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2642E4-1452-95A9-1BE6-A698CCC7181D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2642E4-1452-95A9-1BE6-A698CCC7181D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
