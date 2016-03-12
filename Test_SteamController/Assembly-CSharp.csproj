@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\SteamManager.cs" />
      <Compile Include="Assets\Scripts\SteamTest.cs" />
      <Compile Include="Assets\Scripts\joysticktest.cs" />
