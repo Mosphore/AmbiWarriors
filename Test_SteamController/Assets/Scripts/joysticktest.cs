@@ -12,5 +12,8 @@ public class joysticktest : MonoBehaviour {
 	void Update () {
         Debug.Log(Input.GetAxis("Horizontal2"));
         transform.Translate(Input.GetAxis("Horizontal2") *20* Time.deltaTime, 0, 0);
-	}
+
+        Debug.Log(Input.GetAxis("Vertical2"));
+        transform.Translate(0, 0, Input.GetAxis("Vertical2") * 20 * Time.deltaTime);
+    }
 }
