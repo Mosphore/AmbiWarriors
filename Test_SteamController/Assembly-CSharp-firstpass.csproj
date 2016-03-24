@@ -130,6 +130,12 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+ <Reference Include="RawInputSharp">
+ <HintPath>C:/Users/Mawsp/Desktop/Projets/AmbiWarriors/Test_SteamController/Assets/Plugins/RawInputSharp.dll</HintPath>
+ </Reference>
+ <Reference Include="RawMouseDriver">
+ <HintPath>C:/Users/Mawsp/Desktop/Projets/AmbiWarriors/Test_SteamController/Assets/Plugins/RawMouseDriver.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

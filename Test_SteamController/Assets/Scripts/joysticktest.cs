@@ -3,6 +3,8 @@ using System.Collections;
 
 public class joysticktest : MonoBehaviour {
 
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -10,10 +12,13 @@ public class joysticktest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Input.GetAxis("Horizontal2"));
-        transform.Translate(Input.GetAxis("Horizontal2") *20* Time.deltaTime, 0, 0);
 
-        Debug.Log(Input.GetAxis("Vertical2"));
-        transform.Translate(0, 0, Input.GetAxis("Vertical2") * 20 * Time.deltaTime);
+
+        //Debug.Log( Input.GetAxis("Horizontal"));
+        //transform.Translate(Input.GetAxis("MouseX") * 20 * Time.deltaTime, 0, 0);
+
+
+        //Debug.Log( Input.GetAxis("Vertical"));
+        //transform.Translate(0, 0, Input.GetAxis("Vertica2") * 20 * Time.deltaTime);
     }
 }
