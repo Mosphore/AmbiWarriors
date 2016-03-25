@@ -47,26 +47,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\SlerpLookAt.cs" />
-     <Compile Include="Assets\Scripts\SteamManager.cs" />
-     <Compile Include="Assets\Scripts\SteamTest.cs" />
      <Compile Include="Assets\Scripts\joysticktest.cs" />
-     <None Include="Assets\Plugins\Steamworks.NET\redist\steam_appid.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="RawInputSharp">
- <HintPath>C:/Users/Mawsp/Desktop/Projets/AmbiWarriors/Test_SteamController/Assets/Plugins/RawInputSharp.dll</HintPath>
- </Reference>
- <Reference Include="RawMouseDriver">
- <HintPath>C:/Users/Mawsp/Desktop/Projets/AmbiWarriors/Test_SteamController/Assets/Plugins/RawMouseDriver.dll</HintPath>
- </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{4055BCBB-4FA5-3740-9F5C-A3DAD3650A44}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

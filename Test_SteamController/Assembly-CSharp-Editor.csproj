@@ -47,7 +47,6 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\Steamworks.NET\RedistCopy.cs" />
      <Compile Include="Assets\Editor\Steamworks.NET\RedistInstall.cs" />
-     <None Include="Assets\Plugins\Steamworks.NET\redist\steam_appid.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -72,12 +71,6 @@
  <Reference Include="UnityEditor.TreeEditor">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
- <Reference Include="RawInputSharp">
- <HintPath>C:/Users/Mawsp/Desktop/Projets/AmbiWarriors/Test_SteamController/Assets/Plugins/RawInputSharp.dll</HintPath>
- </Reference>
- <Reference Include="RawMouseDriver">
- <HintPath>C:/Users/Mawsp/Desktop/Projets/AmbiWarriors/Test_SteamController/Assets/Plugins/RawMouseDriver.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -86,8 +79,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{4055BCBB-4FA5-3740-9F5C-A3DAD3650A44}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{9E863F6A-6DF2-0FA3-0EF7-3748876138A1}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
