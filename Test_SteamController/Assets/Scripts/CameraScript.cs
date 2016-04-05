@@ -4,19 +4,20 @@ using System.Collections;
 public class CameraScript : MonoBehaviour
 {
 
-    public int cam_ID;
+    public int cam_ID; // 0 cam gauche, 2 cam droite
     Camera cam;
 
     GameObject arm;
 
     public Rigidbody bullet;
-
     public Texture2D crosshairImage;
 
     //vitesse de deplacement de la camera
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
+    public float aimRotationSpeed = 1;
     public float bulletSpeed = 50.0f;
+    public float camMoveZone = 0.7f; //a partir de quel seuil sur le pad la camera doit bouger
+    public float camMaxInterior = 10;
+    public float camMaxExterior = 80;
 
     //les rotations de camera
     float yaw = 0.0f;
@@ -33,16 +34,18 @@ public class CameraScript : MonoBehaviour
     float mov_y;
 
     //pour positionner le viseur
+    Vector2 camScreenToViewportCenter;
     Vector2 camViewportCenter;
-    float targetPosX = 0;        // la position en x de la cible depuis le centre de la cam
-    float targetPosY = 0;
+    Vector2 targetPos; // position de la cible au centre de chaque camera
 
     // Use this for initialization
     void Start()
     {
         cam = GetComponent<Camera>();
-        camViewportCenter = new Vector2(cam.rect.position.x * Screen.width + cam.rect.width * Screen.width / 2, Screen.height / 2);
+        camScreenToViewportCenter = new Vector2(cam.rect.position.x * Screen.width + cam.rect.width * Screen.width / 2, Screen.height / 2);
         arm = GetComponentInChildren<Transform>().gameObject;
+
+        //camViewportCenter = cam.Rect.center;
 
 
     }
@@ -58,8 +61,9 @@ public class CameraScript : MonoBehaviour
 
     void OnGUI()
     {
+        
         //Debug.Log(cam.rect.position.x + " " + cam.rect.position.y);
-        GUI.DrawTexture(new Rect(camViewportCenter.x + targetPosX - crosshairImage.width / 2, camViewportCenter.y - crosshairImage.height / 2 + targetPosY, crosshairImage.width, crosshairImage.height), crosshairImage);
+        GUI.DrawTexture(new Rect( cam.pixelRect.center.x + targetPos.x - crosshairImage.width, cam.pixelRect.center.y + targetPos.y - crosshairImage.height, crosshairImage.width, crosshairImage.height ), crosshairImage);
         //GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 10, 10), "");
     }
 
@@ -100,12 +104,42 @@ public class CameraScript : MonoBehaviour
             prev_y = y;*/
 
 
-        targetPosX = x * 300;// mov_x * 200;
-        targetPosY = y * 300;//mov_y * 200;
+        targetPos.x = x * 300;// mov_x * 200;
+        targetPos.y = y * 300;//mov_y * 200;
 
         if (x == 0 && y == 0)
         {
-            targetPosX = targetPosY = 0;
+            targetPos.x = targetPos.y = 0;
+        }
+
+        if( x > camMoveZone || x < -camMoveZone)
+        {
+
+            yaw += x * aimRotationSpeed;
+            if (cam_ID == 0)
+            {
+                if (yaw < -camMaxExterior)
+                {
+                    yaw = -camMaxExterior;
+                }
+                else if( yaw > camMaxInterior)
+                {
+                    yaw = camMaxInterior;
+                }
+            }
+            if (cam_ID == 2)
+            {
+                if (yaw > camMaxExterior)
+                {
+                    yaw = camMaxExterior;
+                }
+                else if (yaw < -camMaxInterior)
+                {
+                    yaw = -camMaxInterior;
+                }
+            }
+
+            transform.eulerAngles = new Vector3(0, yaw, 0.0f);
         }
 
         // ROTATION DU BRAS SUR LE VISEUR A FAIRE
@@ -118,14 +152,29 @@ public class CameraScript : MonoBehaviour
         ////rotate us over time according to speed until we are in the required rotation
         //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
 
-        // MOUVEMENT DE CAMERA A FAIRE
+        // TIRS A FAIRE 
+        if( Input.GetAxis("Fire1") == 1)
+        {
+            Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y - targetPos.y , 100));
+            Vector3 shootDir = p - transform.position;
 
-        //yaw += speedH * mov_x * 20;
-        //pitch += speedV * mov_y * 20;
-        //transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+            //tir d'objet physique (missile )
+            Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, Quaternion.identity);
+            bulletClone.velocity = shootDir.normalized * bulletSpeed;
+
+            //tir gatling
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, shootDir, out hit ))
+            {
+                if(hit.transform.tag == "Character")
+                {
+                    hit.transform.GetComponent<Character>().life -= 2;
+                    Debug.Log("hitchar");
+                }
+            }
 
 
-        // TIRS A FAIRE (
+        }
         //Vector3 p = cam.ScreenToWorldPoint(new Vector3(camViewportCenter.x + targetPosX - crosshairImage.width / 2, camViewportCenter.y - targetPosY - crosshairImage.height / 2, 100));
 
         //Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, Quaternion.identity);
