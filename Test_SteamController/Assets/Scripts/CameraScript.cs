@@ -61,16 +61,68 @@ public class CameraScript : MonoBehaviour
 
     void OnGUI()
     {
-        
+
         //Debug.Log(cam.rect.position.x + " " + cam.rect.position.y);
-        GUI.DrawTexture(new Rect( cam.pixelRect.center.x + targetPos.x - crosshairImage.width, cam.pixelRect.center.y + targetPos.y - crosshairImage.height, crosshairImage.width, crosshairImage.height ), crosshairImage);
+        GUI.DrawTexture(new Rect(cam.pixelRect.center.x + targetPos.x - crosshairImage.width, cam.pixelRect.center.y + targetPos.y - crosshairImage.height, crosshairImage.width, crosshairImage.height), crosshairImage);
         //GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 10, 10), "");
     }
 
-    // Update is called once per frame
-    void Update()
+    void Shoot()
     {
+        if (Input.GetAxisRaw("Fire1") == 1 && cam_ID == 2)
+        {
+            Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y - targetPos.y, 100));
+            Vector3 shootDir = p - transform.position;
 
+            //tir d'objet physique (missile )
+            Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, Quaternion.identity);
+            bulletClone.velocity = shootDir.normalized * bulletSpeed;
+        }
+        //if (Input.GetAxisRaw("Fire4") == 1 && cam_ID == 0)
+        //{
+        //    Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y - targetPos.y, 100));
+        //    Vector3 shootDir = p - transform.position;
+
+        //    //tir d'objet physique (missile )
+        //    Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, Quaternion.identity);
+        //    bulletClone.velocity = shootDir.normalized * bulletSpeed;
+        //}
+
+        if (Input.GetAxisRaw("Fire2") > 0 && cam_ID == 0 )
+        {
+            Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y - targetPos.y, 100));
+            Vector3 shootDir = p - transform.position;
+            //tir gatling
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, shootDir, out hit))
+            {
+                if (hit.transform.tag == "Character")
+                {
+                    hit.transform.GetComponent<Character>().life -= 2;
+                    Debug.Log("hitchar" + cam_ID);
+                }
+            }
+        }
+
+        //if (Input.GetAxisRaw("Fire5") > 0 && cam_ID == 2)
+        //{
+        //    Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y - targetPos.y, 100));
+        //    Vector3 shootDir = p - transform.position;
+        //    //tir gatling
+        //    RaycastHit hit;d
+        //    if (Physics.Raycast(transform.position, shootDir, out hit))
+        //    {
+        //        if (hit.transform.tag == "Character")
+        //        {
+        //            hit.transform.GetComponent<Character>().life -= 2;
+        //            Debug.Log("hitchar" + cam_ID);
+        //        }
+        //    }
+        //}
+    }
+
+    void Move()
+    {
         if (cam_ID == 0)
         {
             x = Input.GetAxis("Horizontal");
@@ -84,26 +136,6 @@ public class CameraScript : MonoBehaviour
             y = Input.GetAxis("Vertical2");
         }
 
-
-        /*EN CAS DE RETOUR AU CONTROLLES SOURIS SANS POINT DE RETOUR IL FAUT GARDER LE TAS DE CODE COMMENTE EN DESSOUS
-            if (x != 0 && prev_x != 0)
-                mov_x = x - prev_x;
-
-            if (y != 0 && prev_y != 0)
-                mov_y = y - prev_y;
-
-            if (x == 0 && prev_x == 0)
-                mov_x = 0;
-
-            if (y == 0 && prev_y == 0)
-            {
-                mov_y = 0;
-            }
-
-            prev_x = x;
-            prev_y = y;*/
-
-
         targetPos.x = x * 300;// mov_x * 200;
         targetPos.y = y * 300;//mov_y * 200;
 
@@ -112,7 +144,7 @@ public class CameraScript : MonoBehaviour
             targetPos.x = targetPos.y = 0;
         }
 
-        if( x > camMoveZone || x < -camMoveZone)
+        if (x > camMoveZone || x < -camMoveZone)
         {
 
             yaw += x * aimRotationSpeed;
@@ -122,7 +154,7 @@ public class CameraScript : MonoBehaviour
                 {
                     yaw = -camMaxExterior;
                 }
-                else if( yaw > camMaxInterior)
+                else if (yaw > camMaxInterior)
                 {
                     yaw = camMaxInterior;
                 }
@@ -141,7 +173,14 @@ public class CameraScript : MonoBehaviour
 
             transform.eulerAngles = new Vector3(0, yaw, 0.0f);
         }
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+
+        Move();
+        Shoot();
         // ROTATION DU BRAS SUR LE VISEUR A FAIRE
         ////find the vector pointing from our position to the target
         //direction = (Target.position - transform.position).normalized;
@@ -152,29 +191,8 @@ public class CameraScript : MonoBehaviour
         ////rotate us over time according to speed until we are in the required rotation
         //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
 
-        // TIRS A FAIRE 
-        if( Input.GetAxis("Fire1") == 1)
-        {
-            Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y - targetPos.y , 100));
-            Vector3 shootDir = p - transform.position;
+        // TIRS
 
-            //tir d'objet physique (missile )
-            Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, Quaternion.identity);
-            bulletClone.velocity = shootDir.normalized * bulletSpeed;
-
-            //tir gatling
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, shootDir, out hit ))
-            {
-                if(hit.transform.tag == "Character")
-                {
-                    hit.transform.GetComponent<Character>().life -= 2;
-                    Debug.Log("hitchar");
-                }
-            }
-
-
-        }
         //Vector3 p = cam.ScreenToWorldPoint(new Vector3(camViewportCenter.x + targetPosX - crosshairImage.width / 2, camViewportCenter.y - targetPosY - crosshairImage.height / 2, 100));
 
         //Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, Quaternion.identity);
