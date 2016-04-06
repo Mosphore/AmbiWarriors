@@ -4,6 +4,10 @@ using System.Collections;
 public class CameraScript : MonoBehaviour
 {
 
+    /// <summary>
+    /// zofjsldvmsjfvmsldfnvmosefohjsdifjvhsdfivb
+    /// </summary>
+
     public int cam_ID; // 0 cam gauche, 2 cam droite
     Camera cam;
 
