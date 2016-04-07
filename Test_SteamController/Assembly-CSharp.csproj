@@ -47,8 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
-     <Compile Include="Assets\Scripts\Missile.cs" />
-     <Compile Include="Assets\Scripts\joysticktest.cs" />
+     <Compile Include="Assets\Scripts\MissileScript.cs" />
+     <Compile Include="Assets\Scripts\scriptrandom.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

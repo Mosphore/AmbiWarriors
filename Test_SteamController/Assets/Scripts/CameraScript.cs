@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class CameraScript : MonoBehaviour
+public class CameraScript : NetworkBehaviour
 {
 
     public int cam_ID; // 0 cam gauche, 2 cam droite
     Camera cam;
 
-    GameObject arm;
+    //GameObject arm;
 
     public Rigidbody bullet;
     public Texture2D crosshairImage;
@@ -21,29 +22,19 @@ public class CameraScript : MonoBehaviour
 
     //les rotations de camera
     float yaw = 0.0f;
-    float pitch = 0.0f;
-    Quaternion lookRotation;
-    Vector3 direction;
 
     // pour la conversion des inputs en deplacement de viseur
-    float prev_x;
-    float prev_y;
     float x;
     float y;
-    float mov_x;
-    float mov_y;
 
     //pour positionner le viseur
-    Vector2 camScreenToViewportCenter;
-    Vector2 camViewportCenter;
     Vector2 targetPos; // position de la cible au centre de chaque camera
 
     // Use this for initialization
     void Start()
     {
         cam = GetComponent<Camera>();
-        camScreenToViewportCenter = new Vector2(cam.rect.position.x * Screen.width + cam.rect.width * Screen.width / 2, Screen.height / 2);
-        arm = GetComponentInChildren<Transform>().gameObject;
+        //arm = GetComponentInChildren<Transform>().gameObject;
 
         //camViewportCenter = cam.Rect.center;
 
@@ -61,17 +52,19 @@ public class CameraScript : MonoBehaviour
 
     void OnGUI()
     {
-
+        //Rect truc = new Rect(cam.pixelRect.center.x + targetPos.x - crosshairImage.width, cam.pixelRect.center.y + targetPos.y - crosshairImage.height, crosshairImage.width, crosshairImage.height);
         //Debug.Log(cam.rect.position.x + " " + cam.rect.position.y);
-        GUI.DrawTexture(new Rect(cam.pixelRect.center.x + targetPos.x - crosshairImage.width, cam.pixelRect.center.y + targetPos.y - crosshairImage.height, crosshairImage.width, crosshairImage.height), crosshairImage);
+        //GUI.DrawTexture(new Rect(cam.pixelRect.center.x + targetPos.x - crosshairImage.width, cam.pixelRect.center.y + targetPos.y - crosshairImage.height, crosshairImage.width, crosshairImage.height), crosshairImage);
         //GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 10, 10), "");
     }
 
     void Shoot()
     {
+
         if (Input.GetAxisRaw("Fire1") == 1 && cam_ID == 2)
         {
-            Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y - targetPos.y, 100));
+
+            Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y + - targetPos.y, 100));
             Vector3 shootDir = p - transform.position;
 
             //tir d'objet physique (missile )
@@ -88,7 +81,7 @@ public class CameraScript : MonoBehaviour
         //    bulletClone.velocity = shootDir.normalized * bulletSpeed;
         //}
 
-        if (Input.GetAxisRaw("Fire2") > 0 && cam_ID == 0 )
+        if (Input.GetAxisRaw("Fire2") > 0 && cam_ID == 2 )
         {
             Vector3 p = cam.ScreenToWorldPoint(new Vector3(cam.pixelRect.center.x + targetPos.x, cam.pixelRect.center.y - targetPos.y, 100));
             Vector3 shootDir = p - transform.position;
@@ -98,7 +91,7 @@ public class CameraScript : MonoBehaviour
             {
                 if (hit.transform.tag == "Character")
                 {
-                    hit.transform.GetComponent<Character>().life -= 2;
+                    hit.transform.GetComponent<Character>().LoseLife(2);
                     Debug.Log("hitchar" + cam_ID);
                 }
             }
