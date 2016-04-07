@@ -4,6 +4,7 @@ using System.Collections;
 
 public class MissileScript : MonoBehaviour
 {
+    public float nbDegatSurBatiment = 20.0f;
 
     // Use this for initialization
     void Start()
@@ -25,6 +26,12 @@ public class MissileScript : MonoBehaviour
         }
         //else
         //    Destroy(gameObject);
+
+        // pour Batiments Destructibles
+        if (collision.transform.tag == "DestructBat")
+        {
+            collision.transform.GetComponent<DestructObject>().TakeDamage(nbDegatSurBatiment);
+        }
     }
 }
 
