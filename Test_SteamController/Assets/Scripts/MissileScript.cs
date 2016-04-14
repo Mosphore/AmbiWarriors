@@ -21,7 +21,7 @@ public class MissileScript : MonoBehaviour
     {
         if (collision.transform.tag == "Character")
         {
-            //collision.transform.GetComponent<Character>().LoseLife(10);
+            collision.transform.GetComponent<Character>().LoseLife(10);
             Destroy(gameObject);
         }
         //else
