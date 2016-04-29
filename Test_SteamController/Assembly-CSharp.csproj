@@ -93,6 +93,7 @@
      <Compile Include="Assets\Rewired\Internal\Scripts\Misc\ExternalTools.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\Platforms\Ouya\OuyaInputSource.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
+     <Compile Include="Assets\Scripts\CharacterOld.cs" />
      <Compile Include="Assets\Scripts\DestructObject.cs" />
      <Compile Include="Assets\Scripts\MissileScript.cs" />
      <None Include="Assets\Rewired\Documentation\licences.txt" />
