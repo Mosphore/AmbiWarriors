@@ -564,9 +564,10 @@ public class Character : NetworkBehaviour
         //LeftArmTransform.rotation = lookRotation;
 
         LeftArmTransform.forward = aimPosLeft - LeftArmTransform.position;
+        RightArmTransform.forward = aimPosRight - RightArmTransform.position;
         //LeftArmTransform.forward =  -(LeftArmTransfor.position - aimPosLeft);
         //LeftArmTransform.forward = Vector3.Cross(LeftArmTransform.right, LeftArmTransform.forward);
-        
+
         RotateArmOther();
     }
 }

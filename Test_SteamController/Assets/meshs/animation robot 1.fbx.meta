@@ -336,7 +336,8 @@ ModelImporter:
     4300004: ring_robot:corps
     4300006: ring_robot:armrur_bas1
     4300008: ring_robot:armure_haut
-    7400000: Take 001
+    7400000: Walk
+    7400002: Idle
     9500000: //RootNode
     13700000: ring_robot:armrur_bas1
     13700002: ring_robot:armure_bras_droit
@@ -363,7 +364,715 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 46
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_ChestEndEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_ChestOriginEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_HeadEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase/ring_robot:Character1_Ctrl_LeftFootIndex1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase/ring_robot:Character1_Ctrl_LeftFootIndex1/ring_robot:Character1_Ctrl_LeftFootIndex2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase/ring_robot:Character1_Ctrl_LeftFootRing1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase/ring_robot:Character1_Ctrl_LeftFootRing1/ring_robot:Character1_Ctrl_LeftFootRing2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase/ring_robot:Character1_Ctrl_RightFootIndex1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase/ring_robot:Character1_Ctrl_RightFootIndex1/ring_robot:Character1_Ctrl_RightFootIndex2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase/ring_robot:Character1_Ctrl_RightFootRing1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase/ring_robot:Character1_Ctrl_RightFootRing1/ring_robot:Character1_Ctrl_RightFootRing2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandIndex1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandIndex1/ring_robot:Character1_Ctrl_LeftHandIndex2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandIndex1/ring_robot:Character1_Ctrl_LeftHandIndex2/ring_robot:Character1_Ctrl_LeftHandIndex3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandIndex1/ring_robot:Character1_Ctrl_LeftHandIndex2/ring_robot:Character1_Ctrl_LeftHandIndex3/ring_robot:Character1_Ctrl_LeftHandIndex4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandMiddle1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandMiddle1/ring_robot:Character1_Ctrl_LeftHandMiddle2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandMiddle1/ring_robot:Character1_Ctrl_LeftHandMiddle2/ring_robot:Character1_Ctrl_LeftHandMiddle3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandMiddle1/ring_robot:Character1_Ctrl_LeftHandMiddle2/ring_robot:Character1_Ctrl_LeftHandMiddle3/ring_robot:Character1_Ctrl_LeftHandMiddle4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandPinky1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandPinky1/ring_robot:Character1_Ctrl_LeftHandPinky2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandPinky1/ring_robot:Character1_Ctrl_LeftHandPinky2/ring_robot:Character1_Ctrl_LeftHandPinky3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandPinky1/ring_robot:Character1_Ctrl_LeftHandPinky2/ring_robot:Character1_Ctrl_LeftHandPinky3/ring_robot:Character1_Ctrl_LeftHandPinky4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandThumb1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandThumb1/ring_robot:Character1_Ctrl_LeftHandThumb2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandThumb1/ring_robot:Character1_Ctrl_LeftHandThumb2/ring_robot:Character1_Ctrl_LeftHandThumb3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandThumb1/ring_robot:Character1_Ctrl_LeftHandThumb2/ring_robot:Character1_Ctrl_LeftHandThumb3/ring_robot:Character1_Ctrl_LeftHandThumb4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_Neck
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_Neck/ring_robot:Character1_Ctrl_Head
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandIndex1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandIndex1/ring_robot:Character1_Ctrl_RightHandIndex2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandIndex1/ring_robot:Character1_Ctrl_RightHandIndex2/ring_robot:Character1_Ctrl_RightHandIndex3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandIndex1/ring_robot:Character1_Ctrl_RightHandIndex2/ring_robot:Character1_Ctrl_RightHandIndex3/ring_robot:Character1_Ctrl_RightHandIndex4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandMiddle1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandMiddle1/ring_robot:Character1_Ctrl_RightHandMiddle2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandMiddle1/ring_robot:Character1_Ctrl_RightHandMiddle2/ring_robot:Character1_Ctrl_RightHandMiddle3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandMiddle1/ring_robot:Character1_Ctrl_RightHandMiddle2/ring_robot:Character1_Ctrl_RightHandMiddle3/ring_robot:Character1_Ctrl_RightHandMiddle4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandPinky1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandPinky1/ring_robot:Character1_Ctrl_RightHandPinky2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandPinky1/ring_robot:Character1_Ctrl_RightHandPinky2/ring_robot:Character1_Ctrl_RightHandPinky3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandPinky1/ring_robot:Character1_Ctrl_RightHandPinky2/ring_robot:Character1_Ctrl_RightHandPinky3/ring_robot:Character1_Ctrl_RightHandPinky4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandThumb1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandThumb1/ring_robot:Character1_Ctrl_RightHandThumb2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandThumb1/ring_robot:Character1_Ctrl_RightHandThumb2/ring_robot:Character1_Ctrl_RightHandThumb3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandThumb1/ring_robot:Character1_Ctrl_RightHandThumb2/ring_robot:Character1_Ctrl_RightHandThumb3/ring_robot:Character1_Ctrl_RightHandThumb4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_HipsEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftAnkleEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftElbowEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftFootEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftFootIndexEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftFootRingEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHandIndexEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHandPinkyEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHandThumbEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHipEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftKneeEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftShoulderEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftWristEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightAnkleEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightElbowEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightFootEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightFootIndexEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightFootRingEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHandIndexEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHandMiddleEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHandPinkyEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHandThumbEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHipEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightKneeEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightShoulderEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightWristEffector
+        weight: 1
+      - path: ring_robot:Character1_Reference
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase/ring_robot:Character1_LeftFootIndex1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase/ring_robot:Character1_LeftFootIndex1/ring_robot:Character1_LeftFootIndex2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase/ring_robot:Character1_LeftFootRing1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase/ring_robot:Character1_LeftFootRing1/ring_robot:Character1_LeftFootRing2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase/ring_robot:Character1_RightFootIndex1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase/ring_robot:Character1_RightFootIndex1/ring_robot:Character1_RightFootIndex2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase/ring_robot:Character1_RightFootRing1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase/ring_robot:Character1_RightFootRing1/ring_robot:Character1_RightFootRing2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandIndex1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandIndex1/ring_robot:Character1_LeftHandIndex2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandIndex1/ring_robot:Character1_LeftHandIndex2/ring_robot:Character1_LeftHandIndex3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandIndex1/ring_robot:Character1_LeftHandIndex2/ring_robot:Character1_LeftHandIndex3/ring_robot:Character1_LeftHandIndex4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandMiddle1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandMiddle1/ring_robot:Character1_LeftHandMiddle2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandMiddle1/ring_robot:Character1_LeftHandMiddle2/ring_robot:Character1_LeftHandMiddle3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandMiddle1/ring_robot:Character1_LeftHandMiddle2/ring_robot:Character1_LeftHandMiddle3/ring_robot:Character1_LeftHandMiddle4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandPinky1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandPinky1/ring_robot:Character1_LeftHandPinky2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandPinky1/ring_robot:Character1_LeftHandPinky2/ring_robot:Character1_LeftHandPinky3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandPinky1/ring_robot:Character1_LeftHandPinky2/ring_robot:Character1_LeftHandPinky3/ring_robot:Character1_LeftHandPinky4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandThumb1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandThumb1/ring_robot:Character1_LeftHandThumb2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandThumb1/ring_robot:Character1_LeftHandThumb2/ring_robot:Character1_LeftHandThumb3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandThumb1/ring_robot:Character1_LeftHandThumb2/ring_robot:Character1_LeftHandThumb3/ring_robot:Character1_LeftHandThumb4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_Neck
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_Neck/ring_robot:Character1_Head
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandIndex1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandIndex1/ring_robot:Character1_RightHandIndex2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandIndex1/ring_robot:Character1_RightHandIndex2/ring_robot:Character1_RightHandIndex3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandIndex1/ring_robot:Character1_RightHandIndex2/ring_robot:Character1_RightHandIndex3/ring_robot:Character1_RightHandIndex4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandMiddle1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandMiddle1/ring_robot:Character1_RightHandMiddle2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandMiddle1/ring_robot:Character1_RightHandMiddle2/ring_robot:Character1_RightHandMiddle3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandMiddle1/ring_robot:Character1_RightHandMiddle2/ring_robot:Character1_RightHandMiddle3/ring_robot:Character1_RightHandMiddle4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandPinky1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandPinky1/ring_robot:Character1_RightHandPinky2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandPinky1/ring_robot:Character1_RightHandPinky2/ring_robot:Character1_RightHandPinky3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandPinky1/ring_robot:Character1_RightHandPinky2/ring_robot:Character1_RightHandPinky3/ring_robot:Character1_RightHandPinky4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandThumb1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandThumb1/ring_robot:Character1_RightHandThumb2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandThumb1/ring_robot:Character1_RightHandThumb2/ring_robot:Character1_RightHandThumb3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandThumb1/ring_robot:Character1_RightHandThumb2/ring_robot:Character1_RightHandThumb3/ring_robot:Character1_RightHandThumb4
+        weight: 1
+      - path: ring_robot:group1
+        weight: 1
+      - path: ring_robot:group1/ring_robot:armrur_bas1
+        weight: 1
+      - path: ring_robot:group1/ring_robot:armure_bras_droit
+        weight: 1
+      - path: ring_robot:group1/ring_robot:armure_haut
+        weight: 1
+      - path: ring_robot:group1/ring_robot:armures_bras_gauche
+        weight: 1
+      - path: ring_robot:group1/ring_robot:corps
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1.2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_ChestEndEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_ChestOriginEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_HeadEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase/ring_robot:Character1_Ctrl_LeftFootIndex1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase/ring_robot:Character1_Ctrl_LeftFootIndex1/ring_robot:Character1_Ctrl_LeftFootIndex2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase/ring_robot:Character1_Ctrl_LeftFootRing1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_LeftUpLeg/ring_robot:Character1_Ctrl_LeftLeg/ring_robot:Character1_Ctrl_LeftFoot/ring_robot:Character1_Ctrl_LeftToeBase/ring_robot:Character1_Ctrl_LeftFootRing1/ring_robot:Character1_Ctrl_LeftFootRing2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase/ring_robot:Character1_Ctrl_RightFootIndex1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase/ring_robot:Character1_Ctrl_RightFootIndex1/ring_robot:Character1_Ctrl_RightFootIndex2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase/ring_robot:Character1_Ctrl_RightFootRing1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_RightUpLeg/ring_robot:Character1_Ctrl_RightLeg/ring_robot:Character1_Ctrl_RightFoot/ring_robot:Character1_Ctrl_RightToeBase/ring_robot:Character1_Ctrl_RightFootRing1/ring_robot:Character1_Ctrl_RightFootRing2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandIndex1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandIndex1/ring_robot:Character1_Ctrl_LeftHandIndex2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandIndex1/ring_robot:Character1_Ctrl_LeftHandIndex2/ring_robot:Character1_Ctrl_LeftHandIndex3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandIndex1/ring_robot:Character1_Ctrl_LeftHandIndex2/ring_robot:Character1_Ctrl_LeftHandIndex3/ring_robot:Character1_Ctrl_LeftHandIndex4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandMiddle1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandMiddle1/ring_robot:Character1_Ctrl_LeftHandMiddle2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandMiddle1/ring_robot:Character1_Ctrl_LeftHandMiddle2/ring_robot:Character1_Ctrl_LeftHandMiddle3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandMiddle1/ring_robot:Character1_Ctrl_LeftHandMiddle2/ring_robot:Character1_Ctrl_LeftHandMiddle3/ring_robot:Character1_Ctrl_LeftHandMiddle4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandPinky1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandPinky1/ring_robot:Character1_Ctrl_LeftHandPinky2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandPinky1/ring_robot:Character1_Ctrl_LeftHandPinky2/ring_robot:Character1_Ctrl_LeftHandPinky3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandPinky1/ring_robot:Character1_Ctrl_LeftHandPinky2/ring_robot:Character1_Ctrl_LeftHandPinky3/ring_robot:Character1_Ctrl_LeftHandPinky4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandThumb1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandThumb1/ring_robot:Character1_Ctrl_LeftHandThumb2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandThumb1/ring_robot:Character1_Ctrl_LeftHandThumb2/ring_robot:Character1_Ctrl_LeftHandThumb3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_LeftShoulder/ring_robot:Character1_Ctrl_LeftArm/ring_robot:Character1_Ctrl_LeftForeArm/ring_robot:Character1_Ctrl_LeftHand/ring_robot:Character1_Ctrl_LeftHandThumb1/ring_robot:Character1_Ctrl_LeftHandThumb2/ring_robot:Character1_Ctrl_LeftHandThumb3/ring_robot:Character1_Ctrl_LeftHandThumb4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_Neck
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_Neck/ring_robot:Character1_Ctrl_Head
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandIndex1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandIndex1/ring_robot:Character1_Ctrl_RightHandIndex2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandIndex1/ring_robot:Character1_Ctrl_RightHandIndex2/ring_robot:Character1_Ctrl_RightHandIndex3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandIndex1/ring_robot:Character1_Ctrl_RightHandIndex2/ring_robot:Character1_Ctrl_RightHandIndex3/ring_robot:Character1_Ctrl_RightHandIndex4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandMiddle1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandMiddle1/ring_robot:Character1_Ctrl_RightHandMiddle2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandMiddle1/ring_robot:Character1_Ctrl_RightHandMiddle2/ring_robot:Character1_Ctrl_RightHandMiddle3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandMiddle1/ring_robot:Character1_Ctrl_RightHandMiddle2/ring_robot:Character1_Ctrl_RightHandMiddle3/ring_robot:Character1_Ctrl_RightHandMiddle4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandPinky1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandPinky1/ring_robot:Character1_Ctrl_RightHandPinky2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandPinky1/ring_robot:Character1_Ctrl_RightHandPinky2/ring_robot:Character1_Ctrl_RightHandPinky3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandPinky1/ring_robot:Character1_Ctrl_RightHandPinky2/ring_robot:Character1_Ctrl_RightHandPinky3/ring_robot:Character1_Ctrl_RightHandPinky4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandThumb1
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandThumb1/ring_robot:Character1_Ctrl_RightHandThumb2
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandThumb1/ring_robot:Character1_Ctrl_RightHandThumb2/ring_robot:Character1_Ctrl_RightHandThumb3
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_Hips/ring_robot:Character1_Ctrl_Spine/ring_robot:Character1_Ctrl_Spine1/ring_robot:Character1_Ctrl_Spine2/ring_robot:Character1_Ctrl_RightShoulder/ring_robot:Character1_Ctrl_RightArm/ring_robot:Character1_Ctrl_RightForeArm/ring_robot:Character1_Ctrl_RightHand/ring_robot:Character1_Ctrl_RightHandThumb1/ring_robot:Character1_Ctrl_RightHandThumb2/ring_robot:Character1_Ctrl_RightHandThumb3/ring_robot:Character1_Ctrl_RightHandThumb4
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_HipsEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftAnkleEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftElbowEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftFootEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftFootIndexEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftFootRingEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHandIndexEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHandPinkyEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHandThumbEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftHipEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftKneeEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftShoulderEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_LeftWristEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightAnkleEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightElbowEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightFootEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightFootIndexEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightFootRingEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHandIndexEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHandMiddleEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHandPinkyEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHandThumbEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightHipEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightKneeEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightShoulderEffector
+        weight: 1
+      - path: ring_robot:Character1_Ctrl_Reference/ring_robot:Character1_Ctrl_RightWristEffector
+        weight: 1
+      - path: ring_robot:Character1_Reference
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase/ring_robot:Character1_LeftFootIndex1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase/ring_robot:Character1_LeftFootIndex1/ring_robot:Character1_LeftFootIndex2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase/ring_robot:Character1_LeftFootRing1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_LeftUpLeg/ring_robot:Character1_LeftLeg/ring_robot:Character1_LeftFoot/ring_robot:Character1_LeftToeBase/ring_robot:Character1_LeftFootRing1/ring_robot:Character1_LeftFootRing2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase/ring_robot:Character1_RightFootIndex1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase/ring_robot:Character1_RightFootIndex1/ring_robot:Character1_RightFootIndex2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase/ring_robot:Character1_RightFootRing1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_RightUpLeg/ring_robot:Character1_RightLeg/ring_robot:Character1_RightFoot/ring_robot:Character1_RightToeBase/ring_robot:Character1_RightFootRing1/ring_robot:Character1_RightFootRing2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandIndex1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandIndex1/ring_robot:Character1_LeftHandIndex2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandIndex1/ring_robot:Character1_LeftHandIndex2/ring_robot:Character1_LeftHandIndex3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandIndex1/ring_robot:Character1_LeftHandIndex2/ring_robot:Character1_LeftHandIndex3/ring_robot:Character1_LeftHandIndex4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandMiddle1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandMiddle1/ring_robot:Character1_LeftHandMiddle2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandMiddle1/ring_robot:Character1_LeftHandMiddle2/ring_robot:Character1_LeftHandMiddle3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandMiddle1/ring_robot:Character1_LeftHandMiddle2/ring_robot:Character1_LeftHandMiddle3/ring_robot:Character1_LeftHandMiddle4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandPinky1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandPinky1/ring_robot:Character1_LeftHandPinky2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandPinky1/ring_robot:Character1_LeftHandPinky2/ring_robot:Character1_LeftHandPinky3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandPinky1/ring_robot:Character1_LeftHandPinky2/ring_robot:Character1_LeftHandPinky3/ring_robot:Character1_LeftHandPinky4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandThumb1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandThumb1/ring_robot:Character1_LeftHandThumb2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandThumb1/ring_robot:Character1_LeftHandThumb2/ring_robot:Character1_LeftHandThumb3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_LeftShoulder/ring_robot:Character1_LeftArm/ring_robot:Character1_LeftForeArm/ring_robot:Character1_LeftHand/ring_robot:Character1_LeftHandThumb1/ring_robot:Character1_LeftHandThumb2/ring_robot:Character1_LeftHandThumb3/ring_robot:Character1_LeftHandThumb4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_Neck
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_Neck/ring_robot:Character1_Head
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandIndex1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandIndex1/ring_robot:Character1_RightHandIndex2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandIndex1/ring_robot:Character1_RightHandIndex2/ring_robot:Character1_RightHandIndex3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandIndex1/ring_robot:Character1_RightHandIndex2/ring_robot:Character1_RightHandIndex3/ring_robot:Character1_RightHandIndex4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandMiddle1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandMiddle1/ring_robot:Character1_RightHandMiddle2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandMiddle1/ring_robot:Character1_RightHandMiddle2/ring_robot:Character1_RightHandMiddle3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandMiddle1/ring_robot:Character1_RightHandMiddle2/ring_robot:Character1_RightHandMiddle3/ring_robot:Character1_RightHandMiddle4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandPinky1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandPinky1/ring_robot:Character1_RightHandPinky2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandPinky1/ring_robot:Character1_RightHandPinky2/ring_robot:Character1_RightHandPinky3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandPinky1/ring_robot:Character1_RightHandPinky2/ring_robot:Character1_RightHandPinky3/ring_robot:Character1_RightHandPinky4
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandThumb1
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandThumb1/ring_robot:Character1_RightHandThumb2
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandThumb1/ring_robot:Character1_RightHandThumb2/ring_robot:Character1_RightHandThumb3
+        weight: 1
+      - path: ring_robot:Character1_Reference/ring_robot:Character1_Hips/ring_robot:Character1_Spine/ring_robot:Character1_Spine1/ring_robot:Character1_Spine2/ring_robot:Character1_RightShoulder/ring_robot:Character1_RightArm/ring_robot:Character1_RightForeArm/ring_robot:Character1_RightHand/ring_robot:Character1_RightHandThumb1/ring_robot:Character1_RightHandThumb2/ring_robot:Character1_RightHandThumb3/ring_robot:Character1_RightHandThumb4
+        weight: 1
+      - path: ring_robot:group1
+        weight: 1
+      - path: ring_robot:group1/ring_robot:armrur_bas1
+        weight: 1
+      - path: ring_robot:group1/ring_robot:armure_bras_droit
+        weight: 1
+      - path: ring_robot:group1/ring_robot:armure_haut
+        weight: 1
+      - path: ring_robot:group1/ring_robot:armures_bras_gauche
+        weight: 1
+      - path: ring_robot:group1/ring_robot:corps
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
