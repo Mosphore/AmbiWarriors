@@ -58,7 +58,10 @@ public class MissileScript : NetworkBehaviour
         //NetworkServer.Spawn(fumee);
         NetworkServer.Spawn(explosion);
         Destroy(explosion, 2.0f);
-        Destroy(gameObject);
+        transform.GetComponent<MeshRenderer>().enabled = false;
+        transform.GetComponent<Rigidbody>().Sleep();
+        transform.GetComponent<CapsuleCollider>().enabled = false;
+        Destroy(gameObject,3.0f);
         // Destroy(fumee,10.0f);
 
 

@@ -359,6 +359,7 @@ public class Character : NetworkBehaviour
     {
         //tir d'objet physique (missile )
         GameObject MissileClone = (GameObject)Instantiate(missile, position, Quaternion.identity);
+        MissileClone.transform.up = direction;
         MissileClone.GetComponent<Rigidbody>().velocity = direction * TweakMissileSpeed;
         NetworkServer.Spawn(MissileClone);
         Destroy(MissileClone, 10.0f);
