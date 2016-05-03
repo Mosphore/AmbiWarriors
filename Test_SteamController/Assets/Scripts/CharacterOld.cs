@@ -30,6 +30,7 @@ public class CharacterOld : NetworkBehaviour
 
     public GameObject GatlingParticleEffect;
     public GameObject ImpactParticle;
+    public GameObject MissileShootParticle;
 
     //sprites HUD
     public Texture2D crosshairImage;
@@ -407,7 +408,7 @@ public class CharacterOld : NetworkBehaviour
 
                 if (hit.transform.tag == "Character")
                 {
-                    hit.transform.GetComponent<Character>().LoseLife(20);
+                    hit.transform.GetComponent<CharacterLife>().LoseLife(20);
                 }
 
                 //if (hit.transform.tag == "DestructBat")
