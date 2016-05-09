@@ -3,7 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using Rewired;
 
-[RequireComponent(typeof(CharacterController))]
+//[RequireComponent(typeof(CharacterController))]
 public class Character : NetworkBehaviour
 {
     bool showcockpit = true;
@@ -191,15 +191,19 @@ public class Character : NetworkBehaviour
         /*********/
         //Deplacement perso
         /*********/
-        CharacterController controller = GetComponent<CharacterController>();
+        //CharacterController controller = GetComponent<CharacterController>();
         Vector3 moveDirection;
 
         moveDirection = new Vector3(player.GetAxis("MoveHorizontal"), 0, -player.GetAxis("MoveVertical"));
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= TweakMoveSpeed * speedMultiplier;
 
-        moveDirection.y -= 1000;
-        controller.Move(moveDirection * Time.deltaTime);
+        Debug.Log(moveDirection);
+
+        //moveDirection.y -= 1000;
+        GetComponent<Rigidbody>().velocity = moveDirection;
+        transform.position += (moveDirection * Time.deltaTime);
+        
 
         Vector2 moveLeft, moveRight;
         moveLeft = moveRight = Vector2.zero;
@@ -210,7 +214,7 @@ public class Character : NetworkBehaviour
         leftInput.x = Input.GetAxis("Horizontal");
 
         leftInput.y = Input.GetAxis("Vertical");
-
+        
         rightInput.x = Input.GetAxis("Horizontal2");
 
         rightInput.y = Input.GetAxis("Vertical2");
@@ -361,6 +365,7 @@ public class Character : NetworkBehaviour
         GameObject MissileClone = (GameObject)Instantiate(missile, position, Quaternion.identity);
         MissileClone.transform.up = direction;
         MissileClone.GetComponent<Rigidbody>().velocity = direction * TweakMissileSpeed;
+        MissileClone.GetComponent<MissileScript>().SetOwner(gameObject);
         NetworkServer.Spawn(MissileClone);
         Destroy(MissileClone, 10.0f);
 

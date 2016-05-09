@@ -7,12 +7,17 @@ public class MissileScript : NetworkBehaviour
     public float nbDegatSurBatiment = 20.0f;
 
     public GameObject effetExplosion;
+    GameObject playerOwner;
 
     // Use this for initialization
     void Start()
     {
     }
 
+    public void SetOwner(GameObject Owner)
+    {
+        playerOwner = Owner;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +27,7 @@ public class MissileScript : NetworkBehaviour
     void OnCollisionEnter(Collision collision)
     {
         CmdInstancierEffetDestruction();
-        if (collision.transform.tag == "Character")
+        if (collision.transform.tag == "Character" && collision.gameObject != playerOwner)
         {
             collision.transform.GetComponent<CharacterLife>().LoseLife(10);
         }
@@ -33,6 +38,14 @@ public class MissileScript : NetworkBehaviour
 
         // pour Batiments Destructibles
        
+    }
+
+    [ClientRpc]
+    void RpcEraseMissile()
+    {
+        transform.GetComponent<MeshRenderer>().enabled = false;
+        transform.GetComponent<Rigidbody>().Sleep();
+        transform.GetComponent<CapsuleCollider>().enabled = false;
     }
 
     [Command]
@@ -61,6 +74,7 @@ public class MissileScript : NetworkBehaviour
         transform.GetComponent<MeshRenderer>().enabled = false;
         transform.GetComponent<Rigidbody>().Sleep();
         transform.GetComponent<CapsuleCollider>().enabled = false;
+        RpcEraseMissile();
         Destroy(gameObject,3.0f);
         // Destroy(fumee,10.0f);
 
