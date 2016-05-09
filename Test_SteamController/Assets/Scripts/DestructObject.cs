@@ -19,7 +19,7 @@ public class DestructObject : NetworkBehaviour {
 
     // sert à calculer l'endroit du sol par rapport à l'objet
     private float tailleObjet;
-    public GameObject effetFumee;
+    //public GameObject effetFumee;
     public GameObject effetExplosion;
 
 
@@ -51,10 +51,10 @@ public class DestructObject : NetworkBehaviour {
         posInstanciate.y -= 6.5f;
 
         //effet de fumee
-        GameObject fumee = (GameObject)Instantiate(
-           effetFumee,
-           posInstanciate,
-           Quaternion.Euler(270,0,0));
+        //GameObject fumee = (GameObject)Instantiate(
+        //   effetFumee,
+        //   posInstanciate,
+        //   Quaternion.Euler(270,0,0));
 
         //effet explosion
         GameObject explosion = (GameObject)Instantiate(
@@ -64,11 +64,11 @@ public class DestructObject : NetworkBehaviour {
 
 
         // spawn des effets
-        NetworkServer.Spawn(fumee);
+        //NetworkServer.Spawn(fumee);
         NetworkServer.Spawn(explosion);
         Destroy(gameObject, 0.3f);
-        Destroy(fumee,10.0f);
-        Destroy(explosion,1.0f);
+       // Destroy(fumee,10.0f);
+        Destroy(explosion,2.0f);
 
 
     }

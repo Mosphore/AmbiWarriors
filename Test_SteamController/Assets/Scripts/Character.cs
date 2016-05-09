@@ -18,36 +18,30 @@ public class Character : NetworkBehaviour
     public int playerId = 0; // The Rewired player id of this character
     private Player player; // The Rewired Player
 
-    [SyncVar]
-    public float life = 1000;
-    float prevLife = 1000;
-
-    Texture2D texHealth = null;
-    GUIStyle texHealthStyle = null;
-
     //prefabs
     public GameObject missile;
 
     public GameObject GatlingParticleEffect;
     public GameObject ImpactParticle;
+    public GameObject MissileShootParticle;
 
     //sprites HUD
-    public Texture2D crosshairImage;
+    public Texture2D crosshairLeft, crosshairRight;
     public Texture2D cockpit;
 
     //deplacement du personnage
-    public float rotationSpeed = 1;
-    public float moveSpeed = 20;
+    float shootMoveTimer = 0;
+    float speedMultiplier = 1;
 
     //Camera
     Transform  camMinimap, camTPS, camFPS, camFPSLeft, camFPSRight, // chaque camera du personnage (1ere pers 3eme pers et la minimap
                camPlayer, camLeftAim, camRightAim;// ces 3 dernieres cam servent de couche d'abstraction pour switcher les cameras
+    public GameObject armorTop; // on desactive l'affichage de l'armure pour le joueur, pasque sinon elle est devant sa camera, c'est pour placer la cam plus ou on veut
 
     //Viseurs
-    public Vector2 leftCrosshairInitPos, rightCrosshairInitPos;
+
     Vector2 leftCrosshairMove, rightCrosshairMove;
     Vector2 leftInput, rightInput, prevLeftInput, prevRightInput;
-
 
     //Bras
     [SyncVar]
@@ -56,16 +50,22 @@ public class Character : NetworkBehaviour
     Vector3 rightArmLookAt;
 
     public Transform LeftArmTransform, RightArmTransform;
-    Vector3 aimPosRight, prevAimPosRight;
-    Vector3 aimPosLeft, prevAimPosLeft;
+    Vector3 aimPosRight;
+    Vector3 aimPosLeft;
 
     //Missile et Tirs
     public Transform shootSpawnLeft, shootSpawnRight;
-    public float MissileSpeed = 50.0f;
     float leftShootTimer = 0,
           rightShootTimer = 0,
           leftMissileTimer = 0,
           rightMissileTimer = 0;
+
+    //variables GD 
+    public Vector2 TweakLeftCrosshairInitPos, TweakRightCrosshairInitPos;
+    public float TweakMoveSpeed = 20;
+    public float TweakSpeedMultiplier = 1;
+    public float TweakRotationSpeed = 1;
+    public float TweakMissileSpeed = 50.0f;
 
     void Awake()
     {
@@ -81,17 +81,10 @@ public class Character : NetworkBehaviour
         //active la bonne camera pour le perso sur le serveur
         if (isLocalPlayer)
         {
-            leftCrosshairInitPos = rightCrosshairInitPos = new Vector2(Screen.width / 2, Screen.height / 2);
+            TweakRightCrosshairInitPos += new Vector2(Screen.width / 2, Screen.height / 2);
+            TweakLeftCrosshairInitPos += new Vector2(Screen.width / 2, Screen.height / 2);
+
             Cursor.visible = false;
-            if (texHealth == null)
-                texHealth = new Texture2D(1, 1);
-
-            if (texHealthStyle == null)
-                texHealthStyle = new GUIStyle();
-
-            texHealth.SetPixel(0, 0, Color.green);
-            texHealth.Apply();
-            texHealthStyle.normal.background = texHealth;
 
             //leftCam = transform.FindChild("Camera_Left");
             //rightCam = transform.FindChild("Camera_Right");
@@ -110,11 +103,7 @@ public class Character : NetworkBehaviour
             camLeftAim.GetComponent<Camera>().enabled = true;
             camRightAim.GetComponent<Camera>().enabled = true;
 
-            // GetComponentsInChildren<Camera>()[0].enabled = true;
-            //GetComponentsInChildren<Camera>()[1].enabled = true;
-            //GetComponentsInChildren<Camera>()[2].enabled = true;
-            //GetComponentsInChildren<Camera>()[3].enabled = true;// le 4eme c'est la minimap apparement
-
+            armorTop.SetActive(false);
 
             GetComponentInChildren<AudioListener>().enabled = true;
         }
@@ -126,68 +115,39 @@ public class Character : NetworkBehaviour
             return;
 
         //dessin des cibles (crosshair)
-        GUI.DrawTexture(new Rect(leftCrosshairInitPos.x + leftCrosshairMove.x - crosshairImage.width / 2,
-                                 leftCrosshairInitPos.y + leftCrosshairMove.y - crosshairImage.height / 2,
-                                 crosshairImage.width, crosshairImage.height),
-                                 crosshairImage);
+        GUI.DrawTexture(new Rect(TweakLeftCrosshairInitPos.x + leftCrosshairMove.x - crosshairLeft.width / 6,
+                                 TweakLeftCrosshairInitPos.y + leftCrosshairMove.y - crosshairLeft.height / 6,
+                                 crosshairLeft.width/3, crosshairLeft.height/3),
+                                 crosshairLeft);
 
-        GUI.DrawTexture(new Rect(rightCrosshairInitPos.x + rightCrosshairMove.x - crosshairImage.width / 2,
-                                 rightCrosshairInitPos.y + rightCrosshairMove.y - crosshairImage.height / 2,
-                                 crosshairImage.width, crosshairImage.height),
-                                 crosshairImage);
+        GUI.DrawTexture(new Rect(TweakRightCrosshairInitPos.x + rightCrosshairMove.x - crosshairRight.width / 6,
+                                 TweakRightCrosshairInitPos.y + rightCrosshairMove.y - crosshairRight.height / 6,
+                                 crosshairRight.width/3, crosshairRight.height/3),
+                                 crosshairRight);
 
-        //Vector3 posRightCrosshairCenter = camPlayer.GetComponent<Camera>().WorldToScreenPoint(aimPosRight);
-
-        //if (posRightCrosshairCenter.x < Screen.width / 2.0f + Screen.width * (camPlayer.GetComponent<Camera>().rect.x / 2.0f))
-        //{
-
-        //    GUI.DrawTexture(new Rect(posRightCrosshairCenter.x - crosshairImage.width / 2,
-        //                      Screen.height - posRightCrosshairCenter.y - crosshairImage.height / 2,
-        //                      crosshairImage.width, crosshairImage.height),
-        //                      crosshairImage);
-        //}
-
-        //Vector3 posLeftCrosshairCenter = camPlayer.GetComponent<Camera>().WorldToScreenPoint(aimPosLeft);
-
-        //if (posLeftCrosshairCenter.x > Screen.width / 2 - Screen.width * (camPlayer.GetComponent<Camera>().rect.x / 2))
-        //{
-        //    GUI.DrawTexture(new Rect(posLeftCrosshairCenter.x - crosshairImage.width / 2,
-        //                  Screen.height - posLeftCrosshairCenter.y - crosshairImage.height / 2,
-        //                  crosshairImage.width, crosshairImage.height),
-        //                  crosshairImage);
-        //}
-
-        //GUI.DrawTexture(new Rect(camPlayer.GetComponent<Camera>().pixelRect.xMin - 20 + posCrosshairCenter.x * camPlayer.GetComponent<Camera>().pixelRect.width,
-        //                          camPlayer.GetComponent<Camera>().pixelRect.yMax - 100*(1/0.5f) -  posCrosshairCenter.y * camPlayer.GetComponent<Camera>().pixelRect.height,
-        //                          crosshairImage.width, crosshairImage.height),
-        //                          crosshairImage);
-
-        //camPlayer.GetComponent<Camera>().WorldToScreenPoint(aimPosRight);
         if(showcockpit)
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), cockpit);
-
-        //barre de vie a l'arrache
-        GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 100, 10), GUIContent.none, texHealthStyle);
-
     }
 
     [Command]
     void CmdCheat()
     {
-        LoseLife(200);
-        //transform.Rotate(new Vector3(100, 100, 100));
+        GetComponent<CharacterLife>().LoseLife(200);
     }
 
     void PlayerControls()
     {
 
-        /*********/
-        //Rotation perso
-        /*********/
+        /**********/
+        //LeftArmTransform cheat c'est par ici
+        /**********/
         if (Input.GetKey(KeyCode.K))
         {
             CmdCheat();
         }
+
+        /**********/
+        //ici c'est pour switch entre cam 1ere et 3eme personne
         if (Input.GetKey(KeyCode.O))
         {
             camFPS.GetComponent<Camera>().enabled = false;
@@ -202,13 +162,30 @@ public class Character : NetworkBehaviour
             camPlayer = camFPS;
             showcockpit = true;
         }
+
+        /*********/
+        //Rotation perso
+        /*********/
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(0, rotationSpeed, 0);
+            transform.Rotate(0, TweakRotationSpeed, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, -rotationSpeed, 0);
+            transform.Rotate(0, -TweakRotationSpeed, 0);
+        }
+
+        /*********/
+        //
+        /*********/
+        if (shootMoveTimer > 0)
+        {
+            speedMultiplier = TweakSpeedMultiplier;
+            shootMoveTimer -= Time.deltaTime;
+        }
+        else
+        {
+            speedMultiplier = 1;
         }
 
         /*********/
@@ -219,22 +196,16 @@ public class Character : NetworkBehaviour
 
         moveDirection = new Vector3(player.GetAxis("MoveHorizontal"), 0, -player.GetAxis("MoveVertical"));
         moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= moveSpeed;
+        moveDirection *= TweakMoveSpeed * speedMultiplier;
 
         moveDirection.y -= 1000;
         controller.Move(moveDirection * Time.deltaTime);
-
-        //GetComponent<CharacterController>().Move(transform.right * player.GetAxis("MoveHorizontal") * moveSpeed * Time.deltaTime);
-        //GetComponent<CharacterController>().Move(transform.forward * player.GetAxis("MoveVertical") * -moveSpeed * Time.deltaTime);
-        //transform.position += (transform.right * player.GetAxis("MoveHorizontal") * moveSpeed * Time.deltaTime);
-
-        transform.position += transform.forward * player.GetAxis("MoveVertical") * -moveSpeed * Time.deltaTime;
 
         Vector2 moveLeft, moveRight;
         moveLeft = moveRight = Vector2.zero;
 
         /*********/
-        //Mouvement viseur et rotation cam droite gauche
+        //Mouvement viseur
         /*********/
         leftInput.x = Input.GetAxis("Horizontal");
 
@@ -244,7 +215,6 @@ public class Character : NetworkBehaviour
 
         rightInput.y = Input.GetAxis("Vertical2");
 
-        //EN CAS DE RETOUR AU CONTROLLES SOURIS SANS POINT DE RETOUR IL FAUT GARDER LE TAS DE CODE COMMENTE EN DESSOUS
         if (leftInput.x != 0 && prevLeftInput.x != 0)
             moveLeft.x = leftInput.x - prevLeftInput.x;
 
@@ -265,14 +235,14 @@ public class Character : NetworkBehaviour
 
         
         leftCrosshairMove.x += moveLeft.x * 300;
-        if (leftCrosshairInitPos.x + leftCrosshairMove.x > Screen.width - Screen.width / 3 || leftCrosshairInitPos.x + leftCrosshairMove.x < 0)
+        if (TweakLeftCrosshairInitPos.x + leftCrosshairMove.x > Screen.width - Screen.width / 3 || TweakLeftCrosshairInitPos.x + leftCrosshairMove.x < 0)
             leftCrosshairMove.x -= moveLeft.x * 300;
 
         leftCrosshairMove.y += moveLeft.y * 300;
 
         rightCrosshairMove.x += moveRight.x * 300;
-        if (rightCrosshairInitPos.x + rightCrosshairMove.x < Screen.width / 3 || rightCrosshairInitPos.x + rightCrosshairMove.x > Screen.width)
-            rightCrosshairMove.x -= moveLeft.x * 300;
+        if (TweakRightCrosshairInitPos.x + rightCrosshairMove.x < Screen.width / 3 || TweakRightCrosshairInitPos.x + rightCrosshairMove.x > Screen.width)
+            rightCrosshairMove.x -= moveRight.x * 300;
 
         rightCrosshairMove.y += moveRight.y * 300;
 
@@ -310,14 +280,14 @@ public class Character : NetworkBehaviour
     }
 
     //on calcule la position et l'orientation du tir selon le bras qui a tiré et le type de tir avant d'envoyer le tout au serveur avec la [Command]
-    //pour eviter d'envoyer les variables locales du calcul de tir au serveur.
     void CalcShoot(SHOOT_TYPE st)
     {
+        shootMoveTimer = 0.3f;
         if (st == SHOOT_TYPE.RIGHT_MISSILE)
         {
          //   leftCrosshairInitPos.x + leftCrosshairMove.x
-            Vector3 p = camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(rightCrosshairInitPos.x + rightCrosshairMove.x,
-                                                                                       rightCrosshairInitPos.y - rightCrosshairMove.y, 100));
+            Vector3 p = camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakRightCrosshairInitPos.x + rightCrosshairMove.x,
+                                                                                       TweakRightCrosshairInitPos.y - rightCrosshairMove.y, 100));
 
             RaycastHit hit;
             if (Physics.Raycast(camPlayer.position, p - camPlayer.position, out hit))
@@ -334,8 +304,8 @@ public class Character : NetworkBehaviour
         }
         else if (st == SHOOT_TYPE.RIGHT_GATLING)
         {
-            Vector3 p = camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(rightCrosshairInitPos.x + rightCrosshairMove.x,
-                                                                           rightCrosshairInitPos.y - rightCrosshairMove.y, 100));
+            Vector3 p = camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakRightCrosshairInitPos.x + rightCrosshairMove.x,
+                                                                           TweakRightCrosshairInitPos.y - rightCrosshairMove.y, 100));
             RaycastHit hit;
             if (Physics.Raycast(camPlayer.position, p - camPlayer.position, out hit))
             {
@@ -350,8 +320,8 @@ public class Character : NetworkBehaviour
         }
         if (st == SHOOT_TYPE.LEFT_MISSILE)
         {
-            Vector3 p = camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(leftCrosshairInitPos.x + leftCrosshairMove.x,
-                                                                                       leftCrosshairInitPos.y - leftCrosshairMove.y, 100));
+            Vector3 p = camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakLeftCrosshairInitPos.x + leftCrosshairMove.x,
+                                                                                       TweakLeftCrosshairInitPos.y - leftCrosshairMove.y, 100));
             RaycastHit hit;
             if (Physics.Raycast(camPlayer.position, p - camPlayer.position, out hit))
             {
@@ -366,8 +336,8 @@ public class Character : NetworkBehaviour
         }
         else if (st == SHOOT_TYPE.LEFT_GATLING)
         {
-            Vector3 p = camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(leftCrosshairInitPos.x + leftCrosshairMove.x,
-                                                                                       leftCrosshairInitPos.y - leftCrosshairMove.y, 100));
+            Vector3 p = camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakLeftCrosshairInitPos.x + leftCrosshairMove.x,
+                                                                                       TweakLeftCrosshairInitPos.y - leftCrosshairMove.y, 100));
 
             RaycastHit hit;
             if (Physics.Raycast(camPlayer.position, p - camPlayer.position, out hit))
@@ -389,9 +359,14 @@ public class Character : NetworkBehaviour
     {
         //tir d'objet physique (missile )
         GameObject MissileClone = (GameObject)Instantiate(missile, position, Quaternion.identity);
-        MissileClone.GetComponent<Rigidbody>().velocity = direction * MissileSpeed;
+        MissileClone.GetComponent<Rigidbody>().velocity = direction * TweakMissileSpeed;
         NetworkServer.Spawn(MissileClone);
         Destroy(MissileClone, 10.0f);
+
+        GameObject MissileShootParticleClone = (GameObject)Instantiate(MissileShootParticle, position, Quaternion.identity);
+        MissileShootParticleClone.transform.LookAt(position  + 2*direction);
+        NetworkServer.Spawn(MissileShootParticleClone);
+        Destroy(MissileShootParticleClone, 1.0f);
     }
 
     [Command]
@@ -403,6 +378,8 @@ public class Character : NetworkBehaviour
             if (hit.collider != null)
             {
                 GameObject ImpactClone = (GameObject)Instantiate(ImpactParticle, hit.point, Quaternion.identity);
+                ImpactClone.transform.forward = hit.normal;
+                //ImpactClone.transform.LookAt(transform.position - hit.normal*5);
                 NetworkServer.Spawn(ImpactClone);
                 Destroy(ImpactClone, 0.2f);
 
@@ -413,7 +390,7 @@ public class Character : NetworkBehaviour
 
                 if (hit.transform.tag == "Character")
                 {
-                    hit.transform.GetComponent<Character>().LoseLife(20);
+                    hit.transform.GetComponent<CharacterLife>().LoseLife(20);
                 }
 
                 //if (hit.transform.tag == "DestructBat")
@@ -428,49 +405,6 @@ public class Character : NetworkBehaviour
             GatlingParticleClone.transform.LookAt(position + direction * 100);
             NetworkServer.Spawn(GatlingParticleClone);
             Destroy(GatlingParticleClone, 0.2f);
-        }
-    }
-
-    [ClientRpc]
-    void RpcRespawn()
-    {
-        if (isLocalPlayer)
-        {
-            // move back to zero location
-            transform.position = GameObject.Find("Spawner").transform.position;
-        }
-    }
-
-    public void LoseLife(int damage)
-    {
-        if (!isServer)
-            return;
-
-        life -= damage;
-
-        if (life <= 0)
-        {
-            life = 1000;
-
-            // called on the server, will be invoked on the clients
-            RpcRespawn();
-        }
-    }
-
-    void UpdateHealthBar()
-    {
-        if (life != prevLife)
-        {
-            if (life > 500)
-            {
-                texHealth.SetPixel(0, 0, Color.Lerp(Color.yellow, Color.green, (life - 500) / 500));
-            }
-            else
-            {
-                texHealth.SetPixel(0, 0, Color.Lerp(Color.red, Color.yellow, life / 500));
-            }
-            texHealth.Apply();
-            texHealthStyle.normal.background = texHealth;
         }
     }
 
@@ -493,10 +427,9 @@ public class Character : NetworkBehaviour
             return;
 
         PlayerControls();
-        UpdateHealthBar();
 
         //assignement de la bonne camera au viseur
-        if(leftCrosshairInitPos.x + leftCrosshairMove.x < (Screen.width/3))
+        if(TweakLeftCrosshairInitPos.x + leftCrosshairMove.x < (Screen.width/3))
         {
             camLeftAim = camFPSLeft;
         }
@@ -505,7 +438,7 @@ public class Character : NetworkBehaviour
             camLeftAim = camFPS;
         }
 
-        if (rightCrosshairInitPos.x + rightCrosshairMove.x > Screen.width - (Screen.width / 3))
+        if (TweakRightCrosshairInitPos.x + rightCrosshairMove.x > Screen.width - (Screen.width / 3))
         {
             camRightAim = camFPSRight;
         }
@@ -515,11 +448,11 @@ public class Character : NetworkBehaviour
         }
 
         // on recuperere le point de visée de chaque bras pour les tourner vers ce point dans late update (si on met ce bout de code dans late update y'a un nullreferenceexception qui pop u_u )
-        aimPosLeft = camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(leftCrosshairInitPos.x + leftCrosshairMove.x,
-                                                                                      leftCrosshairInitPos.y - leftCrosshairMove.y, 100));
+        aimPosLeft = camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakLeftCrosshairInitPos.x + leftCrosshairMove.x,
+                                                                                      TweakLeftCrosshairInitPos.y - leftCrosshairMove.y, 100));
 
-        aimPosRight = camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(rightCrosshairInitPos.x + rightCrosshairMove.x,
-                                                                                       rightCrosshairInitPos.y - rightCrosshairMove.y, 100));
+        aimPosRight = camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakRightCrosshairInitPos.x + rightCrosshairMove.x,
+                                                                                       TweakRightCrosshairInitPos.y - rightCrosshairMove.y, 100));
 
     }
 
@@ -533,10 +466,8 @@ public class Character : NetworkBehaviour
     {
         if (!isLocalPlayer)
         {
-            LeftArmTransform.LookAt(leftArmLookAt, transform.up);
-            RightArmTransform.LookAt(rightArmLookAt, transform.up);
-            LeftArmTransform.Rotate(LeftArmTransform.right, 90);
-            RightArmTransform.Rotate(RightArmTransform.right, 90);
+            LeftArmTransform.forward = leftArmLookAt - LeftArmTransform.position;
+            RightArmTransform.forward = rightArmLookAt - RightArmTransform.position;
         }
     }
 
