@@ -29,10 +29,6 @@ public class Character : NetworkBehaviour
     public Texture2D crosshairLeft, crosshairRight;
     public Texture2D cockpit;
 
-    //deplacement du personnage
-    float shootMoveTimer = 0;
-    float speedMultiplier = 1;
-
     //Camera
     Transform  camMinimap, camTPS, camFPS, camFPSLeft, camFPSRight, // chaque camera du personnage (1ere pers 3eme pers et la minimap
                camPlayer, camLeftAim, camRightAim;// ces 3 dernieres cam servent de couche d'abstraction pour switcher les cameras
@@ -62,9 +58,6 @@ public class Character : NetworkBehaviour
 
     //variables GD 
     public Vector2 TweakLeftCrosshairInitPos, TweakRightCrosshairInitPos;
-    public float TweakMoveSpeed = 20;
-    public float TweakSpeedMultiplier = 1;
-    public float TweakRotationSpeed = 1;
     public float TweakMissileSpeed = 50.0f;
 
     void Awake()
@@ -137,73 +130,6 @@ public class Character : NetworkBehaviour
 
     void PlayerControls()
     {
-
-        /**********/
-        //LeftArmTransform cheat c'est par ici
-        /**********/
-        if (Input.GetKey(KeyCode.K))
-        {
-            CmdCheat();
-        }
-
-        /**********/
-        //ici c'est pour switch entre cam 1ere et 3eme personne
-        if (Input.GetKey(KeyCode.O))
-        {
-            camFPS.GetComponent<Camera>().enabled = false;
-            camTPS.GetComponent<Camera>().enabled = true;
-            camPlayer = camTPS;
-            showcockpit = false;
-        }
-        if (Input.GetKey(KeyCode.P))
-        {
-            camFPS.GetComponent<Camera>().enabled = true;
-            camTPS.GetComponent<Camera>().enabled = false;
-            camPlayer = camFPS;
-            showcockpit = true;
-        }
-
-        /*********/
-        //Rotation perso
-        /*********/
-        if (Input.GetKey(KeyCode.E))
-        {
-            transform.Rotate(0, TweakRotationSpeed, 0);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(0, -TweakRotationSpeed, 0);
-        }
-
-        /*********/
-        //
-        /*********/
-        if (shootMoveTimer > 0)
-        {
-            speedMultiplier = TweakSpeedMultiplier;
-            shootMoveTimer -= Time.deltaTime;
-        }
-        else
-        {
-            speedMultiplier = 1;
-        }
-
-        /*********/
-        //Deplacement perso
-        /*********/
-        //CharacterController controller = GetComponent<CharacterController>();
-        Vector3 moveDirection;
-
-        moveDirection = new Vector3(player.GetAxis("MoveHorizontal"), 0, -player.GetAxis("MoveVertical"));
-        moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= TweakMoveSpeed * speedMultiplier;
-
-        Debug.Log(moveDirection);
-
-        //moveDirection.y -= 1000;
-        GetComponent<Rigidbody>().velocity = moveDirection;
-        transform.position += (moveDirection * Time.deltaTime);
-        
 
         Vector2 moveLeft, moveRight;
         moveLeft = moveRight = Vector2.zero;
@@ -286,10 +212,10 @@ public class Character : NetworkBehaviour
     //on calcule la position et l'orientation du tir selon le bras qui a tiré et le type de tir avant d'envoyer le tout au serveur avec la [Command]
     void CalcShoot(SHOOT_TYPE st)
     {
-        shootMoveTimer = 0.3f;
+        GetComponent<CharacterMove>().SlowMovement();
         if (st == SHOOT_TYPE.RIGHT_MISSILE)
         {
-         //   leftCrosshairInitPos.x + leftCrosshairMove.x
+            //   leftCrosshairInitPos.x + leftCrosshairMove.x
             Vector3 p = camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakRightCrosshairInitPos.x + rightCrosshairMove.x,
                                                                                        TweakRightCrosshairInitPos.y - rightCrosshairMove.y, 100));
 
@@ -308,7 +234,7 @@ public class Character : NetworkBehaviour
         }
         else if (st == SHOOT_TYPE.RIGHT_GATLING)
         {
-            Vector3 p = camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakRightCrosshairInitPos.x + rightCrosshairMove.x,
+            Vector3 p =  camRightAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakRightCrosshairInitPos.x + rightCrosshairMove.x,
                                                                            TweakRightCrosshairInitPos.y - rightCrosshairMove.y, 100));
             RaycastHit hit;
             if (Physics.Raycast(camPlayer.position, p - camPlayer.position, out hit))
@@ -324,7 +250,7 @@ public class Character : NetworkBehaviour
         }
         if (st == SHOOT_TYPE.LEFT_MISSILE)
         {
-            Vector3 p = camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakLeftCrosshairInitPos.x + leftCrosshairMove.x,
+            Vector3 p =  camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakLeftCrosshairInitPos.x + leftCrosshairMove.x,
                                                                                        TweakLeftCrosshairInitPos.y - leftCrosshairMove.y, 100));
             RaycastHit hit;
             if (Physics.Raycast(camPlayer.position, p - camPlayer.position, out hit))
@@ -383,9 +309,10 @@ public class Character : NetworkBehaviour
         {
             if (hit.collider != null)
             {
-                GameObject ImpactClone = (GameObject)Instantiate(ImpactParticle, hit.point, Quaternion.identity);
-                ImpactClone.transform.forward = hit.normal;
-                //ImpactClone.transform.LookAt(transform.position - hit.normal*5);
+                GameObject ImpactClone = (GameObject)Instantiate(ImpactParticle, hit.point, Quaternion.LookRotation(hit.normal));
+                //ImpactClone.transform.forward = hit.normal;
+                Debug.Log(hit.normal);
+                //ImpactClone.transform.LookAt(hit.point - hit.normal*5);
                 NetworkServer.Spawn(ImpactClone);
                 Destroy(ImpactClone, 0.2f);
 
@@ -432,6 +359,32 @@ public class Character : NetworkBehaviour
         if (!isLocalPlayer)
             return;
 
+        /**********/
+        //le cheat c'est par ici
+        /**********/
+        if (Input.GetKey(KeyCode.K))
+        {
+            CmdCheat();
+        }
+
+        /**********/
+        //ici c'est pour switch entre cam 1ere et 3eme personne
+        /**********/
+        if (Input.GetKey(KeyCode.O))
+        {
+            camFPS.GetComponent<Camera>().enabled = false;
+            camTPS.GetComponent<Camera>().enabled = true;
+            camPlayer = camTPS;
+            showcockpit = false;
+        }
+        if (Input.GetKey(KeyCode.P))
+        {
+            camFPS.GetComponent<Camera>().enabled = true;
+            camTPS.GetComponent<Camera>().enabled = false;
+            camPlayer = camFPS;
+            showcockpit = true;
+        }
+
         PlayerControls();
 
         //assignement de la bonne camera au viseur
@@ -453,7 +406,8 @@ public class Character : NetworkBehaviour
             camRightAim = camFPS;
         }
 
-        // on recuperere le point de visée de chaque bras pour les tourner vers ce point dans late update (si on met ce bout de code dans late update y'a un nullreferenceexception qui pop u_u )
+        // on recuperere le point de visée de chaque bras pour les tourner vers ce point dans late update
+        //(si on met ce bout de code dans late update y'a un nullreferenceexception qui pop u_u ) 
         aimPosLeft = camLeftAim.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(TweakLeftCrosshairInitPos.x + leftCrosshairMove.x,
                                                                                       TweakLeftCrosshairInitPos.y - leftCrosshairMove.y, 100));
 
